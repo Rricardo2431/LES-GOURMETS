@@ -5,31 +5,211 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Les Gourmets</title>
+    <link rel="javascript" href="index.js">
 </head>
 
 <body>
 <header>
-    <nav>
+    <img src="ressources/LogoBlack2.png" alt="Logo" id="logo">
+    <h1> <id="home">Wild food</h1>
+    <nav  class="navbar">
+        <ul>
+       <li><a href="#home"><img src="ressources/icons8-page-d’accueil-64.png"></a></li>  
+       <li><a href="#maps"><img src="ressources/icons8-google-maps-480.png"></a></li> 
+       <li><a href="#favorite"><img src="ressources/icons8-cuisinier-homme-91.png"></a></li> 
+        </ul>
+    
+</nav>
 
-    </nav>
 </header>
 
 <main>
-    <div>
-        <!-- /*logo et nom*/ -->
-    </div> 
+    <!------------------------------- /*logo et nom*/ ------------------------------->
 
-    <div>
-    <!-- /*search bar*/ -->
+    <!------------------------------- /*search bar*/ -------------------------------->
+    <div class="searchBar">
+        <div class="flip-box">
+            <div class="flip-box-int">
+                <div class="pile">
+                    <input type="image" onclick= "color()" id="searchButton" src="/Ressources/loupe iconeO.png" alt="Soumettre">
+                </div>
+                <div class="face">
+                    <input type="image" onclick="color()" id="searchButton2" src="/Ressources/loupe icone.png" alt="Soumettre">
+                </div>
+            </div>
+        </div>
+        <input id="searchText" type="text" placeholder="miamTu as envie de quoi?miam"> 
     </div> 
-
-    <section>
-    <!-- image et texte restaurant -->
+    <section><!------------------------------- image, maps et caractéristique du restaurant ------------------------------->
+        <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article>
+        <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+        
+                <aside id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside>
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <label id="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article>
+        
     </section>
 </main>
 
    <footer>
+    <ul>
+    <li><a href="https://facebook.com"><img src="ressources/facebook icone.png"></a></li>
+    <li><a href="https://instagram.com"><img src="ressources/instagram icone.png"></a></li>
+    <li><a href="https://twitter.com"><img src="ressources/twitter icone.png"></a></li>
+    <li><a href="https://snapchat.com"><img src="ressources/snapchat icone.png"></a></li>
+    <li><a href="mailto:email@example.com">Contactez nous</a></li>
+    </ul>
     <!-- les reseaux sociaux et contact us -->
    </footer> 
 </body>
