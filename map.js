@@ -1,7 +1,7 @@
 const map = L.map("map").setView([48.868851,2.40604], 15); //Initialisation du point central de la carte
 
 let Stadia_OSMBright = L.tileLayer("https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png", {
-	maxZoom: 20,
+	maxZoom: 15,
 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 }); // Initialisation de la carte
 Stadia_OSMBright.addTo(map); // Ajout de la carte à la map
@@ -34,5 +34,15 @@ resetBtn.addEventListener('click', function() { // Ajoutez un écouteur d'évén
 
   // Réinitialiser la carte Leaflet à sa position initiale
 map.setView([48.868851,2.40604], 15);
-marker1.remove();
+if (marker1) {
+    marker1.remove();
+}
 });
+
+let btn = document.getElementById('home');
+
+// Ajout d'un écouteur d'événements pour le clic sur le bouton
+btn.addEventListener('click', function() {
+    // Redirection vers la page d'accueil
+    window.location.href = 'index.html';
+  });
