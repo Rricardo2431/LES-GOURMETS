@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Snow Buddy';
+    src: url('fonts/Snow-Buddy.eot');
+    src: url('fonts/Snow-Buddy.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Snow-Buddy.woff2') format('woff2'),
+         url('fonts/Snow-Buddy.woff') format('woff'),
+         url('fonts/Snow-Buddy.ttf')  format('truetype'),
+         url('fonts/Snow-Buddy.svg#Snow Buddy') format('svg');
+}
