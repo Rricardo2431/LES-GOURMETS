@@ -196,6 +196,14 @@ l#heart{
     grid-row-end:4;
 } 
 
+main{
+    margin-top: 238px;
+}
+
+header{
+    z-index: 1;
+}
+
 header>h1{
     display: flex;
 text-align: center;
@@ -349,5 +357,37 @@ width: 50px;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
   }
+
+  @media only screen and (min-width: 767px){
+    nav ul {
+      position: initial;
+      top: 0;
+      bottom: initial;
+
+    }   
+    .imagePlace{
+        width: initial;
+    }
+    }
+    .description{
+        display:block;
+    }
+    #map{
+        display: block;
+    }
+    .imageAndMap{
+        justify-content: flex-start;
+    }
+    #logo{
+        z-index: 1;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    #home{
+        margin-bottom: 0.2px;
+    }
   
 
