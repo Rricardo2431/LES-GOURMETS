@@ -1,15 +1,200 @@
+@font-face{
+    font-family:"Snow Buddy";
+    src: url("/FontSnowBuddy/fonts/Snow-Buddy.woff") format("woff");
+}
+
+:root
+{
+    --primary_color:#CC0029;
+    --secondary_color:#FF8811;
+    --third_color:#F5D800;
+    --origin_color:black;
+    --descColor: #bcbcbc;
+    --policeTitle :"Snow Buddy", sans-serif;
+}
+
 * {
     box-sizing: border-box;
     margin-top: 0;
 }
 
-body {
+body{
     margin: 0;
 }
 
-
+#home{
+   font-family: var(--policeTitle);
+   font-size: 13vw;
    
+}
 
+.searchBar{
+    position: relative;
+    /* width: 180px; */
+    /* margin: auto; */
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.flip-box{
+    width: 100px;
+    height: 50px;
+    perspective: 1000px;
+}
+
+.flip-box-int{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-int{
+    transform: rotateY(180deg);
+}
+
+ .face, .pile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   -webkit-backface-visibility: hidden; /*pour le navigateur safari(Mac)*/
+    backface-visibility: hidden;
+}
+
+#searchButton{/*loupe orange sur fond noir*/
+    /* display: none; */
+    background-color: var(--origin_color);
+    border: solid var(--origin_color) 3px;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    transform: rotateY(180deg);
+}
+
+#searchButton2{/*loupe noir sur fond orange*/
+    /* display: none; */
+    background-color: var(--secondary_color);
+    border: solid var(--secondary_color) 3px;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    /* transform: rotateY(180deg); */
+    
+}
+
+#searchText{
+display: none;
+width: 220px;
+background-color: var(--origin_color);
+padding: 0.5vw 0.5vw 0.5vw 0;
+border-top:solid var(--origin_color) 8px ;
+border-right:solid var(--secondary_color) 8px ;
+border-bottom:solid var(--secondary_color) 8px ;
+/* animation: moveSearchBar 4s 1 normal ; */
+}
+
+@keyframes moveSearchBar{
+    0%{
+        opacity: 0;
+        width: 0%;
+    }
+
+    50%{
+        opacity: 0.5;
+        width: 50%;
+    }
+
+
+    100%{
+        opacity: 1;
+    }
+
+
+}
+
+.place{
+    
+    border-radius: 10px;
+    background-color: var(--descColor);
+    margin: 0 50px 50px 50px ;
+}
+
+.imageAndMap{
+    height: 35vw;
+    display: flex;
+}
+
+#map{
+    display:none;
+}
+
+.imagePlace{
+    width:100%;
+    height: 100%;
+    text-align: center;
+    grid-column-start:1;
+    grid-column-end: 3;
+}
+
+.mapPlace{
+    grid-column-start:3;
+    grid-column-end: 5;
+}
+
+.description{
+
+    grid-column-start:1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template: repeat(3,1fr)/repeat(2,1fr);
+}
+
+.name{
+    grid-column-start:1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end:2;
+}
+
+.imageName, .imagePrice, .imageNote, .imageTheme, .imageAvis, #searchButton, #searchButton2{
+    width: 5vw;
+}
+
+ .theme{
+    grid-column-start:2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end:2;
+}
+
+.avis{
+    grid-column-start:1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end:4;
+}
+
+.price{
+    grid-column-start:1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end:3;
+}
+
+.note{
+    grid-column-start:2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end:3;
+}
+
+l#heart{
+    grid-column-start:2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end:4;
+} 
 
 header>h1{
     display: flex;
@@ -53,8 +238,6 @@ footer ul li img {
 
 
 
-
-
 nav ul{
     display: flex;
     justify-content: space-around;
@@ -76,5 +259,94 @@ height: 50px;
 width: 50px;
 }
 
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 20px; 
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (bottom right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    bottom: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  } */
 
 
+  .overlayMap {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  
+  
+  /* Position the close button (top right corner) */
+  .overlayMap .closebtnMap {
+    position: absolute;
+    bottom: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  .overlayMap a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
