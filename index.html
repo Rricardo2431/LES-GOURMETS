@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
     <title>Les Gourmets</title>
     <link rel="javascript" href="index.js">
 </head>
@@ -53,6 +54,7 @@
     </div> 
     <section><!------------------------------- image, maps et caractéristique du restaurant ------------------------------->
         <article class="place">
+            <div id="map"></div>
             <div class="imageAndMap">
                 <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
         
@@ -213,6 +215,9 @@
 
 <div id="myNavMap" class="overlayMap">
 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="340" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtnMap" onclick="closeNavMap()">&times;</a>
   </div>
@@ -243,5 +248,6 @@
     <!-- les reseaux sociaux et contact us -->
    </footer> 
 </body>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="script.js" > </script>
 </html>
