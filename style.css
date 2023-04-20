@@ -196,10 +196,6 @@ l#heart{
     grid-row-end:4;
 } 
 
-main{
-    margin-top: 238px;
-}
-
 header{
     z-index: 1;
 }
@@ -328,6 +324,9 @@ width: 50px;
 
   .overlayMap {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    display:flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 0;
     position: fixed; /* Stay in place */
@@ -368,16 +367,11 @@ width: 50px;
 
 
     }   
-    .imagePlace{
-        width: initial;
-    }
 
     .description{
         display:block;
     }
-    #map{
-        display: block;
-    }
+
     .imageAndMap{
         justify-content: flex-start;
     }
