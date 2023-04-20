@@ -317,6 +317,10 @@ l#heart{
     grid-row-end:4;
 } 
 
+header{
+    z-index: 1;
+}
+
 header>h1{
     display: flex;
 text-align: center;
@@ -345,6 +349,7 @@ footer>ul{
     padding: 0;
     list-style: none;
     align-items: center;
+margin-bottom: 8rem;
 }
 
 
@@ -383,3 +388,136 @@ height: 50px;
 width: 50px;
 }
 
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 20px; 
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (bottom right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    bottom: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  } */
+
+
+  .overlayMap {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  
+  
+  /* Position the close button (top right corner) */
+  .overlayMap .closebtnMap {
+    position: absolute;
+    bottom: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  .overlayMap a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+
+
+   @media screen and (min-width: 400px){
+      nav ul {
+      position: initial;
+      top: 0;
+      bottom: initial;  
+
+
+    }   
+
+    .description{
+        display:block;
+    }
+
+    .imageAndMap{
+        justify-content: flex-start;
+    }
+    #logo{
+        z-index: 1;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    #home{
+        margin-bottom: 0.2px;
+    } 
+    footer ul{
+        margin-bottom: 1em;
+
+    }
+   }
+
+  
+ 
+
+    
+ 
