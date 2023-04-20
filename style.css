@@ -24,90 +24,211 @@ body{
 
 #home{
    font-family: var(--policeTitle);
-   font-size: 13vw;
-   
+   font-size: 13vw;  
 }
+
+#add{
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    background-image: url(/Ressources/add\ icone.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 5%;
+}
+
+.boxModal{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+   position: fixed;
+   top: 0;
+   left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.modalContent{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 20px;
+    width: 30%;
+    margin:30% auto 30% auto;
+    border:solid black;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+
+#closeIdent{
+    background-color: #CC0029;
+    border: solid 3px #CC0029;
+    float: right;
+}
+
+.formModal{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+#formAdmin{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 20px;
+    width: 30%;
+    margin: 10% auto 50% auto;
+    border:solid black;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+#formAdmin > input, select{
+    text-align: center;
+    border-radius: 10px;
+}
+
+.boutons, .buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+#submitAdmin, #submitVerify{
+    background: linear-gradient(90deg, rgba(2,104,53,1) 0%, rgba(24,191,9,1) 35%, rgba(165,255,0,1) 100%);
+} 
+
+#closeAdmin, #closeIdent, #closeFilter{
+    background: linear-gradient(90deg, rgba(135,21,3,1) 0%, rgba(242,0,0,1) 35%, rgba(238,95,95,1) 100%);
+} 
 
 .searchBar{
     position: relative;
-    /* width: 180px; */
-    /* margin: auto; */
     margin-bottom: 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searching{
+    padding: 10px 0 10px 0;
+    display: none;
+    width: 80%;
+    background-color: #FF8811;
+    flex-direction: column;
+    align-items: center;
+    /* animation: moveSearchBar 1s  1 normal forwards; */
+}
+
+.fourchette{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fourchette > div{
+    padding: 1%;
+    border: solid black 3px;
+    border-radius: 50%;
+}
+
+.foodStyleForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.africanIcon{
+    background-image: url(/Ressources/africaIcon.png);
 }
 
 .flip-box{
-    width: 100px;
+    position: relative;
+    width: 50px;
     height: 50px;
-    perspective: 1000px;
 }
 
 .flip-box-int{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 1s;
+    transition: all 0.8s ease;
     transform-style: preserve-3d;
 }
 
 .flip-box:hover .flip-box-int{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
- .face, .pile{
+ .face{
     position: absolute;
     width: 100%;
     height: 100%;
-   -webkit-backface-visibility: hidden; /*pour le navigateur safari(Mac)*/
+   -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+}
+
+.pile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
 }
 
+
 #searchButton{/*loupe orange sur fond noir*/
     /* display: none; */
+    width: 100%;
+    height: 100%;
     background-color: var(--origin_color);
+    background-image: url('/Ressources/loupe iconeO.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
     border: solid var(--origin_color) 3px;
     border-top-left-radius: 10%;
     border-bottom-left-radius: 10%;
-    transform: rotateY(180deg);
 }
 
 #searchButton2{/*loupe noir sur fond orange*/
     /* display: none; */
+    width: 100%;
+    height: 100%;
     background-color: var(--secondary_color);
+    background-image: url('/Ressources/loupe icone.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
     border: solid var(--secondary_color) 3px;
     border-top-right-radius: 10%;
     border-bottom-right-radius: 10%;
-    /* transform: rotateY(180deg); */
     
 }
 
 #searchText{
-display: none;
-width: 220px;
-background-color: var(--origin_color);
+width: 230px;
 padding: 0.5vw 0.5vw 0.5vw 0;
-border-top:solid var(--origin_color) 8px ;
-border-right:solid var(--secondary_color) 8px ;
-border-bottom:solid var(--secondary_color) 8px ;
-/* animation: moveSearchBar 4s 1 normal ; */
 }
 
 @keyframes moveSearchBar{
     0%{
         opacity: 0;
-        width: 0%;
+        height: 0%;
     }
 
     50%{
         opacity: 0.5;
-        width: 50%;
+        height: 50%;
     }
 
 
     100%{
         opacity: 1;
+        height: 100%;
     }
 
 
@@ -231,7 +352,7 @@ footer>ul{
 margin-bottom: 8rem;
 }
 
- 
+
 
 footer ul li img {
     display: block;
@@ -241,6 +362,9 @@ footer ul li img {
 }
 
 
+footer{
+    margin-bottom: 120px;
+}
 
 
 nav ul{
@@ -396,6 +520,4 @@ width: 50px;
  
 
     
-  
-
-
+ 
