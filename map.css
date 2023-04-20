@@ -1,0 +1,9 @@
+#map {
+    width: 360px;
+    height: 360px;
+}
+.Restaurants{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

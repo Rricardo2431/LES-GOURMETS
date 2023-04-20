@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
     <title>Les Gourmets</title>
-    <link rel="javascript" href="index.js">
+    <script src="https://kit.fontawesome.com/dd9ce17545.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    
+     <!------------------------------- /*logo et nom*/ ------------------------------->
 <header>
     <img src="ressources/LogoBlack2.png" alt="Logo" id="logo">
     <h1 id="home">Wild food</h1>
     <nav  class="navbar">
         <ul>
+
        <li><a href="#logo"><img src="ressources/icons8-page-d’accueil-64.png"></a></li>  
        <li><span onclick="openNavMap()"> <img src="ressources/icons8-google-maps-480.png "></span> </li> 
        <button type="button" class="music">
@@ -31,187 +34,184 @@
         </ul>
     
 </nav>
-
 </header>
 
 <main>
-    <!------------------------------- /*logo et nom*/ ------------------------------->
-
-    <!------------------------------- /*search bar*/ -------------------------------->
+    <input type="button" id="add" >
+<!------------------------------- BOX MODAL IDENTIFIANT -------------------------------->
+    
+    <div id="identifiant" class="boxModal">
+        <div class="modalContent">
+                <form>
+                    <label for="id">Identifiant :</label><br>
+                    <input type="text" id="id" name="id"><br>
+                    <label for="mdp">Mots de passe :</label><br>
+                    <input type="password" id="mdp" name="mdp"><br><br>
+                    <div class="buttons">
+                        <button type="submit" id="submitVerify">Validez</button>
+                        <button id="closeIdent">Close</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+<!------------------------------- BOX MODAL FORM -------------------------------->   
+    <div id="formRest" class="formModal">
+        <!-- <div class="formModalContent"> -->
+            <form id="formAdmin">
+                <label for="nameAdmin">Nom du restaurant:</label><br />
+                <input type="text" id="nameAdmin" name="nameAdmin" value=""/><br />
+                <label for="prixAdmin">Prix:</label><br />
+                <input type="text" id="prixAdmin" name="prixAdmin" value="" /><br />
+                <label for="noteAdmin">Note:</label><br />
+                <select id="noteAdmin" name="noteAdmin" value="" >
+                  <option value="1">$</option>
+                  <option value="2">$$</option>
+                  <option value="3">$$$</option>
+                  <option value="4">$$$$</option>
+                  <option value="5">$$$$$</option> </select
+                ><br />
+                <label for="themeAdmin">Thématique:</label><br />
+                <select id="themeAdmin" name="themeAdmin">
+                  <option value="Africaine">Africaine</option>
+                  <option value="Asiat">Asiatique</option>
+                  <option value="Caribeenne">Caribéenne</option>
+                  <option value="Fast-Food">Fast-Food</option>
+                  <option value="Française">Française</option>
+                  <option value="Italienne">Italienne</option>
+                  <option value="Orientale">Orientale</option>
+                  <option value="Street-Food">Street-Food</option> </select
+                ><br />
+                <label for="gpsAdmin">Coordonée:</label><br />
+                <input type="text" id="gpsAdmin" name="gpsAdmin" /><br />
+                <label for="avisAdmin">Avis:</label><br />
+                <input type="text" id="avisAdmin" name="avisAdmin" /><br/><br>
+                <div class="boutons">
+                    <button type="submit" id="submitAdmin">AJOUTE ></button>
+                    <button type="submit" id="closeAdmin">CLOSE X</button>
+                </div>
+              </form>
+        <!-- </div> -->
+    </div>
+<!------------------------------- /* Modal search bar*/ -------------------------------->
+    
     <div class="searchBar">
         <div class="flip-box">
             <div class="flip-box-int">
                 <div class="pile">
-                    <input type="image" onclick= "color()" id="searchButton" src="/Ressources/loupe iconeO.png" alt="Soumettre">
+                    <input type="button" id="searchButton">
                 </div>
                 <div class="face">
-                    <input type="image" onclick="color()" id="searchButton2" src="/Ressources/loupe icone.png" alt="Soumettre">
+                    <input type="button" id="searchButton2">
                 </div>
             </div>
         </div>
-        <input id="searchText" type="text" placeholder="miamTu as envie de quoi?miam"> 
+        <div class="searching">
+            <h4>Trier et filtrer</h4>
+            <div>
+                <label for="searchText"> Recherche :</label><br>
+                <input id="searchText" type="search" placeholder="miam ? Tu as envie de quoi? miam" name="searchText"><br>
+            </div>
+            <h2>Trier</h2>
+
+            <a href="index.html"><i class="fa-solid fa-utensils"></i>  Choisi pour vous</a><br>
+            <a href="index.html"><i class="fa-solid fa-fire"></i>  Les plus populaires</a><br>
+            <a href="index.html"><i class="fa-solid fa-star"></i>  Notes</a><br><br>
+            <h2>Fourchette de prix</h2>
+            <div class="fourchette">
+                <div class="price$"><i class="fa-solid fa-tag"></i></div>
+                <div class="price$$"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i></div>
+                <div class="price$$$"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i></div>
+                <div class="price$$$$"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i></div>
+            </div>
+            <h2>Distance</h2>
+                <form>
+                    <label for="distance"><strong>T'es prêt a marcher combien de temps :</strong></label><br>
+                    <input type="range" id="distance" name="distance" min="0" max="10">
+                </form>
+            <h2>Thèmatique</h2>
+                <form class="foodStyleForm">
+                    <div>
+                    <input type="radio" id="africaineFood" name="foodStyle" value="Africaine">
+                    <label for="africaineFood"><i class="africanIcon"></i>Africaine</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="asianFood" name="foodStyle" value="Asiatique">
+                    <label for="asianFood">Asiatique</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="caribéenneFood" name="foodStyle" value="Caribéenne">
+                    <label for="caribéenneFood">Caribéenne</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="fastFood" name="foodStyle" value="Fast-Food">
+                    <label for="fastFood"><i class="fa-solid fa-burger"></i> Fast-Food</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="frenchFood" name="foodStyle" value="Francaise">
+                    <label for="frenchFood">Francaise</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="ItalianFood" name="foodStyle" value="Italienne">
+                    <label for="ItalianFood"><i class="fa-solid fa-pizza-slice"></i> Italienne</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="orientaleFood" name="foodStyle" value="Orientale">
+                    <label for="orientaleFood">Orientale</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="streetFood" name="foodStyle" value="Street-Food">
+                    <label for="streetFood">Street-Food</label>
+                    </div>
+                </form>
+            <h2>Diététique</h2>
+                <form>
+                    <div>
+                    <input type="radio" id="veggieFood" name="foodStyle" value="Végétarien">
+                    <label for="veggieFood"><i class="fa-solid fa-plant-wilt"></i> Végétarien</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="veganFood" name="foodStyle" value="Vegan">
+                    <label for="veganFood"><i class="fa-solid fa-leaf"></i> Vegan</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="glutenFree" name="foodStyle" value="Sans gluten">
+                    <label for="glutenFree"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Sans gluten</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="halalFood" name="foodStyle" value="Halal">
+                    <label for="halalFood"><i class="fa-regular fa-square-minus"></i> Halal</label><br>
+                    </div><br>
+                    <button type="submit" id="closeFilter">CLOSE X</button>
+                </form>
+        </div>
     </div> 
-    <section><!------------------------------- image, maps et caractéristique du restaurant ------------------------------->
+    <!------------------------------- image, maps et caractéristique du restaurant ------------------------------->
+    <section id="restaurantListe">
         <article class="place">
             <div class="imageAndMap">
                 <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
         
                 <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    <!-- <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> -->
                     </iframe>
                 </aside>
             </div>
             <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
+                <div class="name"><img class="imageName" src="/ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
+                <div class="theme"><img class ="imageTheme" src="/ressources/menu icone.png" alt="Icone Thematique">Théme</div>
+                <div class="avis"><img class ="imageAvis" src="/ressources/comments icone.png" alt="Icone Avis">Avis</div>
+                <div class="price"><img class ="imagePrice" src="/ressources/euro icone.png" alt="Icone Prix">Prix</div>
+                <div class="note"><img class ="imageNote" src="/ressources/etoile icone.png" alt="Icone Note">Note</div>
                 <label id="heart"><input type="checkbox"> Like</label>
             </div>
-        </article>
-        <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article> <article class="place">
-            <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
-        
-                <aside id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </aside>
-            </div>
-            <div class="description">
-                <div class="name"><img class="imageName" src="/Ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/Ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/Ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/Ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/Ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
-            </div>
-        </article>
-        
+        </article> 
     </section>
 </main>
 
 <div id="myNavMap" class="overlayMap">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.176631188675!2d2.379117705498145!3d48.86255645723687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8e8bdafceb%3A0x50b82c368941b80!2s20e%20Arrondissement%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1680769642751!5m2!1sfr!2sfr" width="340" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtnMap" onclick="closeNavMap()">&times;</a>
@@ -231,7 +231,6 @@
     </div>
   
   </div>
-
    <footer>
     <ul>
     <li><a href="https://facebook.com"><img src="ressources/facebook icone.png"></a></li>
@@ -240,8 +239,10 @@
     <li><a href="https://snapchat.com"><img src="ressources/snapchat icone.png"></a></li>
     <li><a href="mailto:email@example.com">Contactez nous</a></li>
     </ul>
-    <!-- les reseaux sociaux et contact us -->
+   
    </footer> 
 </body>
+<script src="index.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="script.js" > </script>
 </html>

@@ -1,38 +1,4 @@
-/* Open when someone clicks on the span element */
-function openNav() {
-    document.getElementById("myNav").style.width = "50%";
-  document.getElementById("myNav").style.height = "65%"
-  }
-  
-  /* Close when someone clicks on the "x" symbol inside the overlay */
-  function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-  }
-
-  function openNavMap() {
-    document.getElementById("myNavMap").style.width = "100%";
-  document.getElementById("myNavMap").style.height = "65%"
-  }
-  
-  function closeNavMap() {
-    document.getElementById("myNavMap").style.width = "0%";
-  }
-
-  
-    let siteMusic = document.querySelector("#siteMusic");
-    let btnplay = document.querySelector("#btnplay");
-
-    btnplay.onclick = function(){
-        if(siteMusic.paused){
-            siteMusic.play();
-            btnplay.src ="ressources/pause icone.png"
-        }else{
-           siteMusic.pause();
-           btnplay.src = "ressources/play icone.png" 
-        }
-    }
-
-    const map = L.map("map").setView([48.868851,2.40604], 15); //Initialisation du point central de la carte
+const map = L.map("map").setView([48.868851,2.40604], 15); //Initialisation du point central de la carte
 
 let Stadia_OSMBright = L.tileLayer("https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png", {
 	maxZoom: 15,
@@ -61,3 +27,22 @@ elements.forEach(function(element) {
             {alt: "O Kyoto"}).addTo(map) // "O Kyoto" nom du marqueur
             .bindPopup("O Kyoto");
     });});
+
+let resetBtn = document.getElementById('reset-btn'); // Sélectionnez le bouton de réinitialisation Html
+
+resetBtn.addEventListener('click', function() { // Ajoutez un écouteur d'événement pour le clic sur le bouton
+
+  // Réinitialiser la carte Leaflet à sa position initiale
+map.setView([48.868851,2.40604], 15);
+if (marker1) {
+    marker1.remove();
+}
+});
+
+let btn = document.getElementById('home');
+
+// Ajout d'un écouteur d'événements pour le clic sur le bouton
+btn.addEventListener('click', function() {
+    // Redirection vers la page d'accueil
+    window.location.href = 'index.html';
+  });
