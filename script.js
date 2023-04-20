@@ -17,3 +17,17 @@ function openNav() {
   function closeNavMap() {
     document.getElementById("myNavMap").style.width = "0%";
   }
+
+  
+    let siteMusic = document.querySelector("#siteMusic");
+    let btnplay = document.querySelector("#btnplay");
+
+    btnplay.onclick = function(){
+        if(siteMusic.paused){
+            siteMusic.play();
+            btnplay.src ="ressources/pause icone.png"
+        }else{
+           siteMusic.pause();
+           btnplay.src = "ressources/play icone.png" 
+        }
+    }
