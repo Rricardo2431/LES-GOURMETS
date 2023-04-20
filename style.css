@@ -491,7 +491,9 @@ width: 50px;
 
 
     }   
-
+    main{
+        margin-top: 17em;
+    }
     .description{
         display:block;
     }
