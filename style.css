@@ -24,62 +24,151 @@ body{
 
 #home{
    font-family: var(--policeTitle);
-   font-size: 13vw;
-   
+   font-size: 13vw;  
 }
+
+#add{
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    background-image: url(/Ressources/add\ icone.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 5%;
+}
+
+.boxModal{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+   position: fixed;
+   top: 0;
+   left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.modalContent{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 20px;
+    width: 30%;
+    margin:30% auto 30% auto;
+    border:solid black;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+
+#closeIdent{
+    background-color: #CC0029;
+    border: solid 3px #CC0029;
+    float: right;
+}
+
+.formModal{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+#formAdmin{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 20px;
+    width: 30%;
+    margin: 10% auto 50% auto;
+    border:solid black;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+#formAdmin > input, select{
+    text-align: center;
+    border-radius: 10px;
+}
+
+#submitAdmin{
+    text-align: center;
+    margin: auto;
+    width: 100px;
+}
+
 
 .searchBar{
     position: relative;
     /* width: 180px; */
-    /* margin: auto; */
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
 }
 
 .flip-box{
-    width: 100px;
+    position: relative;
+    width: 50px;
     height: 50px;
-    perspective: 1000px;
 }
 
 .flip-box-int{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 1s;
+    transition: all 0.8s ease;
     transform-style: preserve-3d;
 }
 
 .flip-box:hover .flip-box-int{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
- .face, .pile{
+ .face{
     position: absolute;
     width: 100%;
     height: 100%;
-   -webkit-backface-visibility: hidden; /*pour le navigateur safari(Mac)*/
+   -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+}
+
+.pile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
 }
 
+
 #searchButton{/*loupe orange sur fond noir*/
     /* display: none; */
+    width: 100%;
+    height: 100%;
     background-color: var(--origin_color);
+    background-image: url('/Ressources/loupe iconeO.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
     border: solid var(--origin_color) 3px;
     border-top-left-radius: 10%;
     border-bottom-left-radius: 10%;
-    transform: rotateY(180deg);
 }
 
 #searchButton2{/*loupe noir sur fond orange*/
     /* display: none; */
+    width: 100%;
+    height: 100%;
     background-color: var(--secondary_color);
+    background-image: url('/Ressources/loupe icone.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
     border: solid var(--secondary_color) 3px;
     border-top-right-radius: 10%;
     border-bottom-right-radius: 10%;
-    /* transform: rotateY(180deg); */
     
 }
 
@@ -226,7 +315,7 @@ footer>ul{
     align-items: center;
 }
 
- 
+
 
 footer ul li img {
     display: block;
@@ -236,6 +325,9 @@ footer ul li img {
 }
 
 
+footer{
+    margin-bottom: 120px;
+}
 
 
 nav ul{
@@ -258,5 +350,12 @@ nav ul img{
 height: 50px;
 width: 50px;
 }
+/* <-------------------------------PARTIE ADMINISTRATEUR---------------------> */
+.bodyAdmin{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
 
-
+.titreAdmin{
+    margin-top: 20px;
+    text-align: center;
+}
