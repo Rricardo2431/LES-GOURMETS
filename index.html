@@ -17,9 +17,19 @@
     <h1 id="home">Wild food</h1>
     <nav  class="navbar">
         <ul>
-       <li><a href="#home"><img src="ressources/icons8-page-d’accueil-64.png"></a></li>  
-       <li><a href="map.html"><img src="ressources/icons8-google-maps-480.png"></a></li> 
-       <li><a href="#favorite"><img src="ressources/icons8-cuisinier-homme-91.png"></a></li> 
+
+       <li><a href="#logo"><img src="ressources/icons8-page-d’accueil-64.png"></a></li>  
+       <li><span onclick="openNavMap()"> <img src="ressources/icons8-google-maps-480.png "></span> </li> 
+       <button type="button" class="music">
+        <img src="ressources/play icone.png" id="btnplay" alt="icone play music">
+    
+        <audio id="siteMusic">
+            <source src="ressources/La-promesse.mp3" type="audio/mp3">
+        </audio>
+    
+    </button>
+       <li><span onclick="openNav()"><img src="ressources/toque icone.png "></span> </li> 
+  
         </ul>
     
 </nav>
@@ -203,6 +213,27 @@
     </section>
 </main>
 
+<div id="myNavMap" class="overlayMap">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtnMap" onclick="closeNavMap()">&times;</a>
+  </div>
+  
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="https://www.burgerlutece.fr/">Suggestion 🍔</a>
+      <a href="http://mapizza75.com/">Suggestion 🍕</a>
+      <a href="https://www.thefork.com/restaurant/grill-house-r743217">Suggestion 🥩</a>
+      <a href="https://www.thefork.com/restaurant/o-kyoto-r711952">Suggestion 🍣</a>
+    </div>
+  
+  </div>
+
    <footer>
     <ul>
     <li><a href="https://facebook.com"><img src="ressources/facebook icone.png"></a></li>
@@ -217,5 +248,5 @@
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="map.js"></script>
 </body>
-
+<script src="script.js" > </script>
 </html>
