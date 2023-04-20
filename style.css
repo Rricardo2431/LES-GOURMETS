@@ -359,17 +359,19 @@ width: 50px;
     transition: 0.3s; /* Transition effects on hover (color) */
   }
 
+
    @media screen and (min-width: 400px){
       nav ul {
       position: initial;
       top: 0;
       bottom: initial;  
 
+
     }   
     .imagePlace{
         width: initial;
     }
-    
+
     .description{
         display:block;
     }
@@ -398,3 +400,8 @@ width: 50px;
 
   
  
+
+    
+  
+
+
