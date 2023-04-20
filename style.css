@@ -91,19 +91,56 @@ body{
     border-radius: 10px;
 }
 
-#submitAdmin{
-    text-align: center;
-    margin: auto;
-    width: 100px;
+.boutons, .buttons{
+    display: flex;
+    justify-content: space-around;
 }
 
+#submitAdmin, #submitVerify{
+    background: linear-gradient(90deg, rgba(2,104,53,1) 0%, rgba(24,191,9,1) 35%, rgba(165,255,0,1) 100%);
+} 
+
+#closeAdmin, #closeIdent, #closeFilter{
+    background: linear-gradient(90deg, rgba(135,21,3,1) 0%, rgba(242,0,0,1) 35%, rgba(238,95,95,1) 100%);
+} 
 
 .searchBar{
     position: relative;
-    /* width: 180px; */
     margin-bottom: 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searching{
+    padding: 10px 0 10px 0;
+    display: none;
+    width: 80%;
+    background-color: #FF8811;
+    flex-direction: column;
+    align-items: center;
+    /* animation: moveSearchBar 1s  1 normal forwards; */
+}
+
+.fourchette{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fourchette > div{
+    padding: 1%;
+    border: solid black 3px;
+    border-radius: 50%;
+}
+
+.foodStyleForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.africanIcon{
+    background-image: url(/Ressources/africaIcon.png);
 }
 
 .flip-box{
@@ -173,30 +210,25 @@ body{
 }
 
 #searchText{
-display: none;
-width: 220px;
-background-color: var(--origin_color);
+width: 230px;
 padding: 0.5vw 0.5vw 0.5vw 0;
-border-top:solid var(--origin_color) 8px ;
-border-right:solid var(--secondary_color) 8px ;
-border-bottom:solid var(--secondary_color) 8px ;
-/* animation: moveSearchBar 4s 1 normal ; */
 }
 
 @keyframes moveSearchBar{
     0%{
         opacity: 0;
-        width: 0%;
+        height: 0%;
     }
 
     50%{
         opacity: 0.5;
-        width: 50%;
+        height: 50%;
     }
 
 
     100%{
         opacity: 1;
+        height: 100%;
     }
 
 
@@ -350,12 +382,4 @@ nav ul img{
 height: 50px;
 width: 50px;
 }
-/* <-------------------------------PARTIE ADMINISTRATEUR---------------------> */
-.bodyAdmin{
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-}
 
-.titreAdmin{
-    margin-top: 20px;
-    text-align: center;
-}

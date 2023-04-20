@@ -7,6 +7,8 @@ const identifiant = document.getElementById("identifiant");
 const closeIdent = document.getElementById("closeIdent");
 const verify = document.getElementById("submitVerify");
 const formRestaurant = document.getElementById("formRest");
+const filter = document.querySelector(".searching");
+const closeFilter = document.getElementById("closeFilter");
 
 /* <-------------------------------FERMETURE MODAL IDENTIFIANT---------------------> */
 closeIdent.addEventListener("click", closeId);
@@ -53,6 +55,7 @@ const submitBtn = document.getElementById("submitAdmin");
 const themeAd = document.getElementById("themeAdmin");
 const gpsAd = document.getElementById("gpsAdmin");
 const section = document.getElementById("restaurantListe");
+const closeAdmin = document.getElementById("closeAdmin");
 const restaurant = {
   name: "",
   price: "",
@@ -93,9 +96,30 @@ function addR(event) {
 /* <-------------------------------CREATION ET POSITIONNEMENT DIV ---------------------> */
   articleRestau.appendChild(description);/*mettre la description dans la section*/
   section.appendChild(articleRestau);/*mettre la section en dernier apres avoir tout mis dedans*/
+
+  closeAdmin.addEventListener("click", closeForm);
 }
 
+
+
+
 function closeForm (){
-    formRestaurant.style.display="block";
+    formRestaurant.style.display="none";
     console.log(arrayRestaurant);
+}
+
+/* <-------------------------------OUVERTURE FILTRE MODAL---------------------> */
+
+searchBtn2.addEventListener("click", openFilter);
+closeFilter.addEventListener("click", closeFil);
+
+function openFilter(){
+    console.log(filter);
+    filter.style.display="flex";
+    filter.style.animation="moveSearchBar 1s  1 normal forwardsblock";
+    
+}
+
+function closeFil(){
+    filter.style.display="none";
 }

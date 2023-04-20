@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Les Gourmets</title>
-    <link rel="javascript" href="index.js">
+    <script src="https://kit.fontawesome.com/dd9ce17545.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,11 +33,13 @@
         <div class="modalContent">
                 <form>
                     <label for="id">Identifiant :</label><br>
-                    <input type="text" id="id" name="id" required><br>
+                    <input type="text" id="id" name="id"><br>
                     <label for="mdp">Mots de passe :</label><br>
-                    <input type="password" id="mdp" name="mdp"required><br><br>
-                    <button type="submit" id="submitVerify">Validez</button>
-                    <span id="closeIdent">Close</span>
+                    <input type="password" id="mdp" name="mdp"><br><br>
+                    <div class="buttons">
+                        <button type="submit" id="submitVerify">Validez</button>
+                        <button id="closeIdent">Close</button>
+                    </div>
                 </form>
         </div>
     </div>
@@ -73,11 +74,14 @@
                 <input type="text" id="gpsAdmin" name="gpsAdmin" /><br />
                 <label for="avisAdmin">Avis:</label><br />
                 <input type="text" id="avisAdmin" name="avisAdmin" /><br/><br>
-                <button type="submit" id="submitAdmin">AJOUTE</button>
+                <div class="boutons">
+                    <button type="submit" id="submitAdmin">AJOUTE ></button>
+                    <button type="submit" id="closeAdmin">CLOSE X</button>
+                </div>
               </form>
         <!-- </div> -->
     </div>
-<!------------------------------- /*search bar*/ -------------------------------->
+<!------------------------------- /* Modal search bar*/ -------------------------------->
     
     <div class="searchBar">
         <div class="flip-box">
@@ -86,11 +90,89 @@
                     <input type="button" id="searchButton">
                 </div>
                 <div class="face">
-                    <input type="button" id="searchButton2" alt="Soumettre">
+                    <input type="button" id="searchButton2">
                 </div>
             </div>
         </div>
-        <input id="searchText" type="text" placeholder="miam Tu as envie de quoi? miam"> 
+        <div class="searching">
+            <h4>Trier et filtrer</h4>
+            <div>
+                <label for="searchText"> Recherche :</label><br>
+                <input id="searchText" type="search" placeholder="miam ? Tu as envie de quoi? miam" name="searchText"><br>
+            </div>
+            <h2>Trier</h2>
+
+            <a href="index.html"><i class="fa-solid fa-utensils"></i>  Choisi pour vous</a><br>
+            <a href="index.html"><i class="fa-solid fa-fire"></i>  Les plus populaires</a><br>
+            <a href="index.html"><i class="fa-solid fa-star"></i>  Notes</a><br><br>
+            <h2>Fourchette de prix</h2>
+            <div class="fourchette">
+                <div class="price$"><i class="fa-solid fa-tag"></i></div>
+                <div class="price$$"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i></div>
+                <div class="price$$$"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i></div>
+                <div class="price$$$$"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i><i class="fa-solid fa-tag"></i></div>
+            </div>
+            <h2>Distance</h2>
+                <form>
+                    <label for="distance"><strong>T'es prêt a marcher combien de temps :</strong></label><br>
+                    <input type="range" id="distance" name="distance" min="0" max="10">
+                </form>
+            <h2>Thèmatique</h2>
+                <form class="foodStyleForm">
+                    <div>
+                    <input type="radio" id="africaineFood" name="foodStyle" value="Africaine">
+                    <label for="africaineFood"><i class="africanIcon"></i>Africaine</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="asianFood" name="foodStyle" value="Asiatique">
+                    <label for="asianFood">Asiatique</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="caribéenneFood" name="foodStyle" value="Caribéenne">
+                    <label for="caribéenneFood">Caribéenne</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="fastFood" name="foodStyle" value="Fast-Food">
+                    <label for="fastFood"><i class="fa-solid fa-burger"></i> Fast-Food</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="frenchFood" name="foodStyle" value="Francaise">
+                    <label for="frenchFood">Francaise</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="ItalianFood" name="foodStyle" value="Italienne">
+                    <label for="ItalianFood"><i class="fa-solid fa-pizza-slice"></i> Italienne</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="orientaleFood" name="foodStyle" value="Orientale">
+                    <label for="orientaleFood">Orientale</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="streetFood" name="foodStyle" value="Street-Food">
+                    <label for="streetFood">Street-Food</label>
+                    </div>
+                </form>
+            <h2>Diététique</h2>
+                <form>
+                    <div>
+                    <input type="radio" id="veggieFood" name="foodStyle" value="Végétarien">
+                    <label for="veggieFood"><i class="fa-solid fa-plant-wilt"></i> Végétarien</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="veganFood" name="foodStyle" value="Vegan">
+                    <label for="veganFood"><i class="fa-solid fa-leaf"></i> Vegan</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="glutenFree" name="foodStyle" value="Sans gluten">
+                    <label for="glutenFree"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Sans gluten</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="halalFood" name="foodStyle" value="Halal">
+                    <label for="halalFood"><i class="fa-regular fa-square-minus"></i> Halal</label><br>
+                    </div><br>
+                    <button type="submit" id="closeFilter">CLOSE X</button>
+                </form>
+        </div>
     </div> 
     <!------------------------------- image, maps et caractéristique du restaurant ------------------------------->
     <section id="restaurantListe">
