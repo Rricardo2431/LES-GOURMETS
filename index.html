@@ -5,31 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
     <title>Les Gourmets</title>
     <script src="https://kit.fontawesome.com/dd9ce17545.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     
-     <!------------------------------- /*logo et nom*/ ------------------------------->
+     <!-- /*logo et nom*/-->
 <header>
     <img src="ressources/LogoBlack2.png" alt="Logo" id="logo">
     <h1 id="home">Wild food</h1>
     <nav  class="navbar">
         <ul>
 
-       <li><a href="#logo"><img src="ressources/icons8-page-d’accueil-64.png"></a></li>  
-       <li><span onclick="openNavMap()"> <img src="ressources/icons8-google-maps-480.png "></span> </li> 
-       <button type="button" class="music">
-        <img src="ressources/play icone.png" id="btnplay" alt="icone play music">
+       <li><a href="#logo"><img src="ressources/icons8-page-d’accueil-64.png" alt="logo acceuil"></a></li>  
+       <li><span onclick="openNavMap()"> <img src="ressources/icons8-google-maps-480.png " alt="icone map"></span> </li> 
+       <li><button type="button" class="music">
+        <img src="ressources/playicone.png" id="btnplay" alt="icone play music">
     
         <audio id="siteMusic">
             <source src="ressources/La-promesse.mp3" type="audio/mp3">
         </audio>
     
-    </button>
-       <li><span onclick="openNav()"><img src="ressources/toque icone.png "></span> </li> 
+    </button></li>
+       <li><span onclick="openNav()"><img src="ressources/toqueicone.png " alt="toqueicoine"></span> </li> 
   
         </ul>
     
@@ -37,8 +37,8 @@
 </header>
 
 <main>
-    <input type="button" id="add" >
-<!------------------------------- BOX MODAL IDENTIFIANT -------------------------------->
+    <input type="button" id="add" value="">
+<!-- BOX MODAL IDENTIFIANT -->
     
     <div id="identifiant" class="boxModal">
         <div class="modalContent">
@@ -54,23 +54,23 @@
                 </form>
         </div>
     </div>
-<!------------------------------- BOX MODAL FORM -------------------------------->   
+<!--BOX MODAL FORM -->   
     <div id="formRest" class="formModal">
         <!-- <div class="formModalContent"> -->
             <form id="formAdmin">
-                <label for="nameAdmin">Nom du restaurant:</label><br />
-                <input type="text" id="nameAdmin" name="nameAdmin" value=""/><br />
-                <label for="prixAdmin">Prix:</label><br />
-                <input type="text" id="prixAdmin" name="prixAdmin" value="" /><br />
-                <label for="noteAdmin">Note:</label><br />
-                <select id="noteAdmin" name="noteAdmin" value="" >
+                <label for="nameAdmin">Nom du restaurant:</label><br/>
+                <input type="text" id="nameAdmin" name="nameAdmin" value=""><br/>
+                <label for="prixAdmin">Prix:</label><br/>
+                <input type="text" id="prixAdmin" name="prixAdmin" value=""><br/>
+                <label for="noteAdmin">Note:</label><br/>
+                <select id="noteAdmin" name="noteAdmin">
                   <option value="1">$</option>
                   <option value="2">$$</option>
                   <option value="3">$$$</option>
                   <option value="4">$$$$</option>
                   <option value="5">$$$$$</option> </select
                 ><br />
-                <label for="themeAdmin">Thématique:</label><br />
+                <label for="themeAdmin">Thématique:</label><br/>
                 <select id="themeAdmin" name="themeAdmin">
                   <option value="Africaine">Africaine</option>
                   <option value="Asiat">Asiatique</option>
@@ -98,10 +98,10 @@
         <div class="flip-box">
             <div class="flip-box-int">
                 <div class="pile">
-                    <input type="button" id="searchButton">
+                    <input type="button" id="searchButton" value="">
                 </div>
                 <div class="face">
-                    <input type="button" id="searchButton2">
+                    <input type="button" id="searchButton2" value="">
                 </div>
             </div>
         </div>
@@ -189,20 +189,93 @@
     <section id="restaurantListe">
         <article class="place">
             <div class="imageAndMap">
-                <img class="imagePlace" src="https://loremflickr.com/320/240/paris,girl/all" alt="Restaurant">
+                <img class="imagePlace" src="https://www.spoon-restaurant.com/wp-content/uploads/2022/06/Spoon_cLe_Bonbon-1-scaled.jpg" alt="Restaurant">
         
-                <aside id="map">
-                    <!-- <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> -->
+                <!-- <aside id="map">
+                    <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                </aside>
+                </aside> -->
             </div>
             <div class="description">
-                <div class="name"><img class="imageName" src="/ressources/restaurant icone.png" alt="Icone Nom">Nom</div>
-                <div class="theme"><img class ="imageTheme" src="/ressources/menu icone.png" alt="Icone Thematique">Théme</div>
-                <div class="avis"><img class ="imageAvis" src="/ressources/comments icone.png" alt="Icone Avis">Avis</div>
-                <div class="price"><img class ="imagePrice" src="/ressources/euro icone.png" alt="Icone Prix">Prix</div>
-                <div class="note"><img class ="imageNote" src="/ressources/etoile icone.png" alt="Icone Note">Note</div>
-                <label id="heart"><input type="checkbox"> Like</label>
+                <div class="name"><img class="imageName" src="/ressources/restauranticone.png" alt="Icone Nom">Le Papillon</div>
+                <div class="theme"><img class ="imageTheme" src="/ressources/menuicone.png" alt="Icone Thematique">Théme : Francaise</div>
+                <div class="avis"><img class ="imageAvis" src="/ressources/commentsicone.png" alt="Icone Avis">Avis : </div>
+                <div class="price"><img class ="imagePrice" src="/ressources/euroicone.png" alt="Icone Prix">Prix : €€</div>
+                <div class="note"><img class ="imageNote" src="/ressources/etoileicone.png" alt="Icone Note">Note : 4.4/10</div>
+                <label class="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> 
+        <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://coyarestaurant.com/wp-content/uploads/2023/04/Carrousel-n2-min.png" alt="Restaurant">
+        
+                <!-- <aside id="map">
+                    <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside> -->
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/ressources/restauranticone.png" alt="Icone Nom">Voyage du Palais</div>
+                <div class="theme"><img class ="imageTheme" src="/ressources/menuicone.png" alt="Icone Thematique">Théme : Africaine</div>
+                <div class="avis"><img class ="imageAvis" src="/ressources/commentsicone.png" alt="Icone Avis">Avis : </div>
+                <div class="price"><img class ="imagePrice" src="/ressources/euroicone.png" alt="Icone Prix">Prix : €€</div>
+                <div class="note"><img class ="imageNote" src="/ressources/etoileicone.png" alt="Icone Note">Note : 4.6/10</div>
+                <label class="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> 
+        <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://www.restoaparis.com/photos-vip/comptoir-nippon-plaques-teppanyaki/$file/comptoir-nippon-plaques-teppanyaki.jpg" alt="Restaurant">
+        
+                <!-- <aside id="map">
+                    <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside> -->
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/ressources/restauranticone.png" alt="Icone Nom">New Toma Sushi</div>
+                <div class="theme"><img class ="imageTheme" src="/ressources/menuicone.png" alt="Icone Thematique">Théme : Asiatique</div>
+                <div class="avis"><img class ="imageAvis" src="/ressources/commentsicone.png" alt="Icone Avis">Avis : </div>
+                <div class="price"><img class ="imagePrice" src="/ressources/euroicone.png" alt="Icone Prix">Prix : €€€</div>
+                <div class="note"><img class ="imageNote" src="/ressources/etoileicone.png" alt="Icone Note">Note : 4.4/10</div>
+                <label class="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article> 
+        <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://images.squarespace-cdn.com/content/v1/5b2cd12dee17596af71ba454/1539847301184-3UITCHK67PAFGBIOSK7U/Pur-Restaurant-Paris.jpg?format=2500w" alt="Restaurant">
+        
+                <!-- <aside id="map">
+                    <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside> -->
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/ressources/restauranticone.png" alt="Icone Nom">La Manufacture Meb</div>
+                <div class="theme"><img class ="imageTheme" src="/ressources/menuicone.png" alt="Icone Thematique">Théme : Francaise</div>
+                <div class="avis"><img class ="imageAvis" src="/ressources/commentsicone.png" alt="Icone Avis">Avis : </div>
+                <div class="price"><img class ="imagePrice" src="/ressources/euroicone.png" alt="Icone Prix">Prix : €€</div>
+                <div class="note"><img class ="imageNote" src="/ressources/etoileicone.png" alt="Icone Note">Note : 3.7/10</div>
+                <label class="heart"><input type="checkbox"> Like</label>
+            </div>
+        </article>
+        <article class="place">
+            <div class="imageAndMap">
+                <img class="imagePlace" src="https://www.parisgourmand.com/images/stories/17-restos/auberge-dab-restaurant-paris-terrasse-1.jpg
+                " alt="Restaurant">
+        
+                <!-- <aside id="map">
+                    <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </aside> -->
+            </div>
+            <div class="description">
+                <div class="name"><img class="imageName" src="/ressources/restauranticone.png" alt="Icone Nom">Restaurant la Haut</div>
+                <div class="theme"><img class ="imageTheme" src="/ressources/menuicone.png" alt="Icone Thematique">Théme : Francaise</div>
+                <div class="avis"><img class ="imageAvis" src="/ressources/commentsicone.png" alt="Icone Avis">Avis : </div>
+                <div class="price"><img class ="imagePrice" src="/ressources/euroicone.png" alt="Icone Prix">Prix : €€</div>
+                <div class="note"><img class ="imageNote" src="/ressources/etoileicone.png" alt="Icone Note">Note : 4.3/10</div>
+                <label class="heart"><input type="checkbox"> Like</label>
             </div>
         </article> 
     </section>
@@ -233,16 +306,18 @@
   </div>
    <footer>
     <ul>
-    <li><a href="https://facebook.com"><img src="ressources/facebook icone.png"></a></li>
-    <li><a href="https://instagram.com"><img src="ressources/instagram icone.png"></a></li>
-    <li><a href="https://twitter.com"><img src="ressources/twitter icone.png"></a></li>
-    <li><a href="https://snapchat.com"><img src="ressources/snapchat icone.png"></a></li>
+    <li><a href="https://facebook.com"><img src="ressources/facebookicone.png" alt="logo"></a></li>
+    <li><a href="https://instagram.com"><img src="ressources/instagramicone.png" alt="logo"></a></li>
+    <li><a href="https://twitter.com"><img src="ressources/twittericone.png" alt="logo"></a></li>
+    <li><a href="https://snapchat.com"><img src="ressources/snapchaticone.png" alt="logo"></a></li>
     <li><a href="mailto:email@example.com">Contactez nous</a></li>
     </ul>
    
    </footer> 
-</body>
-<script src="index.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+   <script src="index.js"></script>
+   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="script.js" > </script>
+</body>
+
+
 </html>
